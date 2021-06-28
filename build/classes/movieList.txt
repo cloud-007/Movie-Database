@@ -1,0 +1,9 @@
+DILWALE DULHANIA LE JAYENGE,ROMANCE,ADITYA CHOPRA,192,8.1,nothing
+AVENGERS,ACTION,JOSS WHEDON,143,8.0,https://i.ibb.co/2Z3FN9F/avengers.jpg
+DILWALE,ACTION,ROHIT SHETTY,158,5.1,https://i.ibb.co/8DkNd6B/dilwale-Image.jpg
+PARKER,THRILLER,TAYLOR HACKFORD,118,6.2,https://i.ibb.co/smrzkjY/1Parker.jpg
+TAMASHA,ROMANCE,IMTIAZ ALI,139,7.3,https://i.ibb.co/Nny13Nq/Tamasha-film-poster.jpg
+MAJOR,ADVENTURE,SASHI KIRAN TIKKA,140,5.5,https://i.ibb.co/hCX2gjc/et00097589-vtartnhvjd-portrait.jpg
+CRISIS,THRILLER,NICHOLAS JARECKI,118,6.1,https://i.ibb.co/ChJXmT2/ao4-Jaj-Lc-PITivfstlz-ENge3-MPkq.jpg
+ABCD,ACTION,NOONE,432,2,nothing
+NEWMOVIE,ADVENTURE,FSD,1233,4,nothing
