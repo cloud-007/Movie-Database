@@ -20,7 +20,7 @@ public class adminUser extends user {
     }
 
     protected static boolean add(String user, String pass) {
-        File f = new File("src\\moviedatabase\\TextResources/adminUser.txt");
+        File f = new File("C:\\Users\\Mazharul Islam\\Documents\\NetBeansProjects\\MovieDatabase\\src/adminUser.txt");
         FileReader fr = null;
         BufferedReader br = null;
         try {
@@ -59,7 +59,7 @@ public class adminUser extends user {
     }
 
     protected static boolean checkAdmin(String name, String pwd) {
-        File f = new File("src\\moviedatabase\\TextResources/adminUser.txt");
+        File f = new File("C:\\Users\\Mazharul Islam\\Documents\\NetBeansProjects\\MovieDatabase\\src/adminUser.txt");
         FileReader fr = null;
         BufferedReader br = null;
         try {
