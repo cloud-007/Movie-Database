@@ -73,7 +73,7 @@ public class searchByGenre extends javax.swing.JFrame {
         genreComboBox.setBackground(new java.awt.Color(0, 0, 51));
         genreComboBox.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         genreComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        genreComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTION", "ROMANCE", "DRAMA", "HORROR", "COMEDY", "FICTION", "SCIENCE_FICTION", "WAR", "CRIME", "THRILLER", "MUSICAL", "NOIR", "DOCUMENTARY", "ANIMATION", "BIOGRAPHY", "FANTASY", "ADVENTURE", "SCIENCE", "SPORTS" }));
+        genreComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTION", "ADVENTURE", "ANIMATION", "BIOGRAPHY", "COMEDY", "CRIME", "DOCUMENTARY", "DRAMA", "FICTION", "FANTASY", "HORROR", "MUSICAL", "NOIR", "ROMANCE", "SCIENCE_FICTION", "SCIENCE", "SPORTS", "THRILLER", "WAR" }));
         genreComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 genreComboBoxActionPerformed(evt);
@@ -94,11 +94,11 @@ public class searchByGenre extends javax.swing.JFrame {
     }//GEN-LAST:event_genreComboBoxActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        String s = movie.getGenreOrDirector(genreComboBox.getSelectedItem().toString() , 1);
-        if(!s.equals("NOTHING")){
+        String s = database.getGenreOrDirector(genreComboBox.getSelectedItem().toString(), 1);
+        if (!s.equals("NOTHING")) {
             this.setVisible(false);
             new allMovie(s, 1).setVisible(true);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "No Movie Found");
         }
     }//GEN-LAST:event_okButtonActionPerformed

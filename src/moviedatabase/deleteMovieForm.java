@@ -86,9 +86,9 @@ public class deleteMovieForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        if (movie.checkMovie(this.movieName.getText().toUpperCase())!=null) {
-            movie.deleteMovieorRequest(this.movieName.getText().toUpperCase(), 1);
-            JOptionPane.showMessageDialog(null, this.movieName.getText()+" deleted successfully");
+        if (database.checkMovie(this.movieName.getText().toUpperCase())) {
+            database.deleteMovieOrRequest(this.movieName.getText().toUpperCase(), 1);
+            JOptionPane.showMessageDialog(null, this.movieName.getText() + " deleted successfully");
             this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(null, "Enter a valid movie name");
@@ -97,7 +97,7 @@ public class deleteMovieForm extends javax.swing.JFrame {
 
     private void cencelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cencelButtonActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",
-            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             this.setVisible(false);
         }
     }//GEN-LAST:event_cencelButtonActionPerformed

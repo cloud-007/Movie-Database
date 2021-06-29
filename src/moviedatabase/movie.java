@@ -246,7 +246,6 @@ public class movie {
 
     protected static String allMovie() {
         File f = new File("C:\\Users\\Mazharul Islam\\Documents\\NetBeansProjects\\MovieDatabase\\src/movieList.txt");
-        f = new File(f.getAbsoluteFile().toString());
         FileReader fr = null;
         BufferedReader br = null;
         String ret = "";

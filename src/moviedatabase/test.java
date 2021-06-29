@@ -5,20 +5,13 @@
  */
 package moviedatabase;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import org.omg.CORBA.portable.InputStream;
-
 /**
  *
  * @author Mazharul Islam
  */
 public class test {
-
-    public static void main(String[] args) throws MalformedURLException, IOException {
-        File f = new File("src/adminUser.txt");
-        System.out.println(f.getAbsoluteFile().toString());
+    
+    public static void main(String[] args) {
+        database.createTable("HUM_AR_TUM");
     }
 }

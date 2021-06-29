@@ -129,9 +129,9 @@ public class homePage extends javax.swing.JFrame {
     }//GEN-LAST:event_searchMovieActionPerformed
 
     private void allMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allMovieActionPerformed
-        if (movie.countMovie()) {
+        if (database.tableExists("moviedetails")) {
             this.setVisible(false);
-            String s = movie.allMovie();
+            String s = database.getAllMovie();
             new allMovie(s, 0).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Movie Database is Empty:(");

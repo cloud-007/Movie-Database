@@ -1,0 +1,6 @@
+moviedatabase.registeruserForm
+moviedatabase.registeruserForm$2
+moviedatabase.registeruserForm$1
+moviedatabase.registeruserForm$4
+moviedatabase.registeruserForm$3
+moviedatabase.registeruserForm$5

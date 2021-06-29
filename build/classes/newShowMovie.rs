@@ -1,0 +1,7 @@
+moviedatabase.newShowMovie$2
+moviedatabase.newShowMovie$3
+moviedatabase.newShowMovie$4
+moviedatabase.newShowMovie
+moviedatabase.newShowMovie$5
+moviedatabase.newShowMovie$1
+moviedatabase.newShowMovie$6

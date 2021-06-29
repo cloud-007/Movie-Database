@@ -137,7 +137,7 @@ public class userForm extends javax.swing.JFrame {
         } else if (pwd.length() == 0) {
             JOptionPane.showMessageDialog(null, "Password required");
         } else {
-            if (normalUser.normalCheck(user, pwd)) {
+            if (database.validAdminOrNormal(user, pwd, 2)) {
                 this.setVisible(false);
                 new homePage().setVisible(true);
                 JOptionPane.showMessageDialog(null, "Welcome " + user);

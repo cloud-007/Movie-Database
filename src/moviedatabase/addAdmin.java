@@ -118,11 +118,12 @@ public class addAdmin extends javax.swing.JFrame {
         } else if (pwd.length() > 10) {
             JOptionPane.showMessageDialog(null, "Password is too long");
         } else {
-            if (adminUser.add(user, pwd) == true) {
-                JOptionPane.showMessageDialog(null, "Admin Added Successfully");
-                this.setVisible(false);
+            if (database.adminOrNormalExists(user, 1)) {
+                JOptionPane.showMessageDialog(null, "Admin Exists!");
             } else {
-                JOptionPane.showMessageDialog(null, "Admin exists");
+                JOptionPane.showMessageDialog(null, "Admin Added Successfully");
+                database.insertAdminOrNormalUser(user, pwd, 1);
+                this.setVisible(false);
             }
         }
     }//GEN-LAST:event_registerActionPerformed

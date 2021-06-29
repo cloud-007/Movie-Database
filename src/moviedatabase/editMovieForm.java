@@ -21,7 +21,7 @@ public class editMovieForm extends javax.swing.JFrame {
      * @param s
      */
     public editMovieForm(String s) {
-        this.s = s;
+        this.s = database.getMovieDetails(s);
         initComponents();
         this.setDesign(this.s);
     }
@@ -196,8 +196,8 @@ public class editMovieForm extends javax.swing.JFrame {
         } else if (this.movieRating.getText().length() == 0) {
             JOptionPane.showMessageDialog(null, "Movie Rating Required");
         } else {
-            movie.deleteMovieorRequest(this.curMovie, 1);
-            movie.add(this.movieName.getText(), genre.toUpperCase(), this.movieDirector.getText(),
+            database.deleteMovieOrRequest(this.curMovie, 1);
+            database.addMovie(this.movieName.getText().toUpperCase(), genre.toUpperCase(), this.movieDirector.getText().toUpperCase(),
                     this.movieLength.getText(), this.movieRating.getText(), this.url.getText());
             JOptionPane.showMessageDialog(null, "Movie Updated Successfully!");
             this.setVisible(false);

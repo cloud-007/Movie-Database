@@ -1,0 +1,6 @@
+moviedatabase.adminLoginForm$1
+moviedatabase.adminLoginForm$2
+moviedatabase.adminLoginForm$3
+moviedatabase.adminLoginForm$4
+moviedatabase.adminLoginForm$5
+moviedatabase.adminLoginForm

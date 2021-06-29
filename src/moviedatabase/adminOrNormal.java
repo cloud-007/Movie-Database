@@ -15,6 +15,7 @@ public class adminOrNormal extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public adminOrNormal() {
+        System.setProperty("sun.java2d.uiScale", "1");
         initComponents();
     }
 
@@ -109,6 +110,7 @@ public class adminOrNormal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                System.setProperty("sun.java2d.uiScale", "1");
                 new adminOrNormal().setVisible(true);
             }
         });

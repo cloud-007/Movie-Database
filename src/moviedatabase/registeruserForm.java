@@ -115,14 +115,15 @@ public class registeruserForm extends javax.swing.JFrame {
         } else if (pwd.length() > 10) {
             JOptionPane.showMessageDialog(null, "Password is too long");
         } else {
-            if (adminUser.banCheck(this.username.getText())) {
+            if (database.bannedUser(user)) {
                 JOptionPane.showMessageDialog(null, "This user is banned!");
-            } else if (normalUser.adduser(user, pwd) == true) {
-                JOptionPane.showMessageDialog(null, "Registration Successful");
+            } else if (database.adminOrNormalExists(user, 2)) {
+                JOptionPane.showMessageDialog(null, "User exists");
+            } else {
+                JOptionPane.showMessageDialog(null, "Registration Successfull!");
+                database.insertAdminOrNormalUser(user, pwd, 2);
                 this.setVisible(false);
                 new userForm().setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(null, "Username exists");
             }
         }
     }//GEN-LAST:event_registerActionPerformed

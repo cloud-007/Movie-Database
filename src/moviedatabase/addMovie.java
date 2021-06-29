@@ -5,8 +5,6 @@
  */
 package moviedatabase;
 
-import java.util.Locale;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -237,11 +235,11 @@ public class addMovie extends javax.swing.JFrame {
                 && (Float.parseFloat(this.movieRating.getText()) < 0
                 || Float.parseFloat(this.movieRating.getText()) > 10)) {
             JOptionPane.showMessageDialog(null, "Rating must be beteween 0-10!");
-        } else if (movie.checkMovie(this.movieName.getText().toUpperCase()) == null) {
-            if (movie.requestExists(this.movieName.getText().toUpperCase())) {
-                movie.deleteRequest(this.movieName.getText().toUpperCase());
+        } else if (database.checkMovie(this.movieName.getText()) == false) {
+            if (database.movieRequestExists(this.movieName.getText())) {
+                database.deleteMovieOrRequest(this.movieName.getText(), 2);
             }
-            movie.add(this.movieName.getText().toUpperCase(), genre.toUpperCase(), this.movieDirector.getText().toUpperCase(),
+            database.addMovie(this.movieName.getText().toUpperCase(), genre.toUpperCase(), this.movieDirector.getText().toUpperCase(),
                     this.movieLength.getText(), this.movieRating.getText(), this.url.getText());
             JOptionPane.showMessageDialog(null, "Movie added Successfully");
             this.setVisible(false);

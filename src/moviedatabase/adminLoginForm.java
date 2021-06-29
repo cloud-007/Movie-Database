@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author Mazharul Islam
  */
 public class adminLoginForm extends javax.swing.JFrame {
+
     /**
      * Creates new form adminLoginForm
      */
@@ -30,7 +31,7 @@ public class adminLoginForm extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
         username = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
@@ -47,17 +48,17 @@ public class adminLoginForm extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moviedatabase/Images/icons8-password-40.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moviedatabase/Images/icons8-login-40.png"))); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setBackground(new java.awt.Color(0, 0, 51));
+        loginButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moviedatabase/Images/icons8-login-40.png"))); // NOI18N
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 348, 280, -1));
+        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 348, 280, -1));
 
         username.setBackground(new java.awt.Color(0, 0, 51));
         username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -102,7 +103,7 @@ public class adminLoginForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String user = this.username.getText();
         String pwd = new String(this.password.getPassword());
         if (user.length() == 0) {
@@ -110,7 +111,7 @@ public class adminLoginForm extends javax.swing.JFrame {
         } else if (pwd.length() == 0) {
             JOptionPane.showMessageDialog(null, "Password required");
         } else {
-            if (adminUser.checkAdmin(user, pwd)) {
+            if (database.validAdminOrNormal(user, pwd, 1)) {
                 this.setVisible(false);
                 new adminForm().setVisible(true);
                 JOptionPane.showMessageDialog(null, "Welcome " + user);
@@ -118,7 +119,7 @@ public class adminLoginForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Enter a valid username and password");
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
@@ -170,11 +171,11 @@ public class adminLoginForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

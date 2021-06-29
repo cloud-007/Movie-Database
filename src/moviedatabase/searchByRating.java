@@ -110,7 +110,7 @@ public class searchByRating extends javax.swing.JFrame {
                 || (Float.parseFloat(this.endField.getText()) < 0 || Float.parseFloat(this.endField.getText()) > 10)) {
             JOptionPane.showMessageDialog(null, "Rating must be between 0-10");
         } else {
-            String s = movie.getRating(Float.parseFloat(this.startField.getText()), Float.parseFloat(this.endField.getText()));
+            String s = database.getRating(Float.parseFloat(this.startField.getText()), Float.parseFloat(this.endField.getText()));
             if (s.equals("NOTHING")) {
                 JOptionPane.showMessageDialog(null, "No Movie Found:(");
             } else {

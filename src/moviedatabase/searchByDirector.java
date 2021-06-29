@@ -92,7 +92,7 @@ public class searchByDirector extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        String s = movie.getGenreOrDirector(this.directorName.getText().toUpperCase() ,2);
+        String s = database.getGenreOrDirector(this.directorName.getText().toUpperCase() ,2);
         if(!s.equals("NOTHING")){
             this.setVisible(false);
             new allMovie(s, 1).setVisible(true);

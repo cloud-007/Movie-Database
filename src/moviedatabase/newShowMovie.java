@@ -64,12 +64,12 @@ public class newShowMovie extends javax.swing.JFrame {
     }
 
     private void setReview() {
-        String x = review.allReview(this.curMovie);
-        if (x.length() == 0) {
-            this.setreviewIndex(-1);
-        } else {
-            Review = x.split("\\,");
+        if (database.tableExists(curMovie)) {
+            String x = database.getReview(this.curMovie);
+            this.Review = x.split("\\,");
             this.setreviewIndex(0);
+        } else {
+            this.setreviewIndex(-1);
         }
     }
 

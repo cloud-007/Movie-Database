@@ -94,10 +94,12 @@ public class requestMovie extends javax.swing.JFrame {
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         if (this.movieName.getText().length() == 0) {
             JOptionPane.showMessageDialog(null, "Please write something...");
-        } else if (movie.checkMovie(this.movieName.getText().toUpperCase()) == null) {
+        } else if (database.checkMovie(this.movieName.getText().toUpperCase()) == false) {
             this.setVisible(false);
             JOptionPane.showMessageDialog(null, "Your request has been placed successfully!");
-            movie.movieRequest(this.movieName.getText().toUpperCase());
+            if (database.movieRequestExists(this.movieName.getText().toUpperCase()) == false) {
+                database.addMovieRequest(this.movieName.getText().toUpperCase());
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Movie already exists!");
         }

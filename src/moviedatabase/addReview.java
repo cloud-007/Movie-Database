@@ -95,7 +95,10 @@ public class addReview extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Review character must be between 0-20");
         } else {
             JOptionPane.showMessageDialog(null, "Review added successfully! Will impact next time you visit.");
-            review.addReview(this.movieName, s);
+            if (!database.tableExists(this.movieName)) {
+                database.createTable(this.movieName);
+            }
+            database.addReview(this.movieName, s);
             this.setVisible(false);
         }
     }//GEN-LAST:event_okButtonActionPerformed

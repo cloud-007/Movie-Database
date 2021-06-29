@@ -91,17 +91,19 @@ public class banUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        if(adminUser.banUser(this.username.getText())==true){
-            JOptionPane.showMessageDialog(null, this.username.getText()+" is banned");
+        if (database.adminOrNormalExists(this.username.getText(), 2)) {
+            JOptionPane.showMessageDialog(null, this.username.getText() + " is banned");
+            database.deleteAdminOrNormal(this.username.getText(), 2);
+            database.addBannedUser(this.username.getText());
             this.setVisible(false);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Enter a valid username");
         }
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void cencelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cencelButtonActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "WARNING",
-            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             this.setVisible(false);
         }
     }//GEN-LAST:event_cencelButtonActionPerformed

@@ -91,11 +91,11 @@ public class removeAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        if(this.adminName.getText().equals("mazharul")){
+        if (this.adminName.getText().equals("mazharul")) {
             JOptionPane.showMessageDialog(null, "You cannot remove mazharul from admin");
-        }
-        else if (adminUser.removeAdmin(this.adminName.getText())) {
+        } else if (database.adminOrNormalExists(this.adminName.getText(), 1)) {
             JOptionPane.showMessageDialog(null, "Admin removed successfully");
+            database.deleteAdminOrNormal(this.adminName.getText(), 1);
             this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(null, "Enter a valid Admin name");

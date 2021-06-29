@@ -19,20 +19,10 @@ public class requestedMovie extends javax.swing.JFrame {
     /**
      * Creates new form requestedMovie
      *
-     * @param s
      */
-    public requestedMovie(String s) {
-        initComponents();
-        this.s = movie.allMovieRequest();
-        this.setMovie();
-        this.setTextField();
-        this.setButton();
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }
-
     public requestedMovie() {
         initComponents();
-        this.s = movie.allMovieRequest();
+        this.s = database.requestedMovie();
         this.setMovie();
         this.setTextField();
         this.setButton();

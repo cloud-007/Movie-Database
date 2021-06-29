@@ -93,10 +93,9 @@ public class editMovie extends javax.swing.JFrame {
     }//GEN-LAST:event_cencelButtonActionPerformed
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        String s = movie.checkMovie(this.movieName.getText().toUpperCase());
-        if (s != null) {
+        if (database.checkMovie(this.movieName.getText().toUpperCase())) {
             this.setVisible(false);
-            new editMovieForm(s).setVisible(true);
+            new editMovieForm(this.movieName.getText().toUpperCase()).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Enter a valid movie name");
         }
