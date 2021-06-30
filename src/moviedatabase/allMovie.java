@@ -5,11 +5,15 @@
  */
 package moviedatabase;
 
+import User.addReview;
+import User.homePage;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import moviedatabase.database;
+import moviedatabase.imageGenerate;
 
 /**
  *

@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
  */
 public class imageGenerate {
 
-    protected static Image checkUrl(String s) {
+    public static Image checkUrl(String s) {
         try {
             BufferedImage image = ImageIO.read(new URL(s));
             //BufferedImage image = ImageIO.read(new URL("http://someimage.jpg"));\

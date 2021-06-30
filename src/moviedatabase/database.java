@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class database {
 
-    protected static void insertAdminOrNormalUser(String username, String pass, int idx) {
+    public static void insertAdminOrNormalUser(String username, String pass, int idx) {
         try {
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
             Statement myStmt = myConn.createStatement();
@@ -36,7 +36,7 @@ public class database {
         }
     }
 
-    protected static void addMovieRequest(String name) {
+    public static void addMovieRequest(String name) {
         try {
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
             Statement myStmt = myConn.createStatement();
@@ -48,7 +48,7 @@ public class database {
         }
     }
 
-    protected static boolean adminOrNormalExists(String username, int idx) {
+    public static boolean adminOrNormalExists(String username, int idx) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -78,7 +78,7 @@ public class database {
         }
     }
 
-    protected static boolean validAdminOrNormal(String username, String password, int idx) {
+    public static boolean validAdminOrNormal(String username, String password, int idx) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -110,7 +110,7 @@ public class database {
         }
     }
 
-    protected static void addBannedUser(String name) {
+    public static void addBannedUser(String name) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -129,7 +129,7 @@ public class database {
         }
     }
 
-    protected static boolean bannedUser(String username) {
+    public static boolean bannedUser(String username) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -156,7 +156,7 @@ public class database {
         }
     }
 
-    protected static void deleteAdminOrNormal(String username, int idx) {
+    public static void deleteAdminOrNormal(String username, int idx) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -181,7 +181,7 @@ public class database {
         }
     }
 
-    protected static void addMovie(String name, String genre, String director, String length, String rating, String url) {
+    public static void addMovie(String name, String genre, String director, String length, String rating, String url) {
         if (url.length() == 0) {
             url = "nothing";
         }
@@ -206,7 +206,7 @@ public class database {
         }
     }
 
-    protected static boolean checkMovie(String s) {
+    public static boolean checkMovie(String s) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -232,7 +232,7 @@ public class database {
         }
     }
 
-    protected static boolean movieRequestExists(String name) {
+    public static boolean movieRequestExists(String name) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -257,7 +257,7 @@ public class database {
         }
     }
 
-    protected static void deleteMovieOrRequest(String s, int idx) {
+    public static void deleteMovieOrRequest(String s, int idx) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -282,7 +282,7 @@ public class database {
         }
     }
 
-    protected static String getMovieDetails(String s) {
+    public static String getMovieDetails(String s) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -317,7 +317,7 @@ public class database {
         return "";
     }
 
-    protected static String requestedMovie() {
+    public static String requestedMovie() {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -347,7 +347,7 @@ public class database {
         return "";
     }
 
-    protected static String getAllMovie() {
+    public static String getAllMovie() {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -387,7 +387,7 @@ public class database {
         return "";
     }
 
-    protected static String getGenreOrDirector(String name, int type) {
+    public static String getGenreOrDirector(String name, int type) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -433,7 +433,7 @@ public class database {
         return "NOTHING";
     }
 
-    protected static boolean tableExists(String name) {
+    public static boolean tableExists(String name) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -458,7 +458,7 @@ public class database {
         }
     }
 
-    protected static void addReview(String moviename, String review) {
+    public static void addReview(String moviename, String review) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -477,7 +477,7 @@ public class database {
         }
     }
 
-    protected static void createTable(String name) {
+    public static void createTable(String name) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
@@ -497,7 +497,7 @@ public class database {
         }
     }
 
-    protected static String getRating(float start, float end) {
+    public static String getRating(float start, float end) {
         //System.out.println(start + " " + end);
         if (start > end) {
             float x = end;
@@ -549,7 +549,7 @@ public class database {
         return "NOTHING";
     }
 
-    protected static String getReview(String moviename) {
+    public static String getReview(String moviename) {
         Connection myConn = null;
         try {
             myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myDatabase", "root", "12345");
